@@ -6,3 +6,4 @@ COPY ./config /config
 
 # Home Assistant run කරන command එක
 CMD [ "hass", "--config", "/config" ]
+
