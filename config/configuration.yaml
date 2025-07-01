@@ -1,10 +1,18 @@
-# Example basic config
 homeassistant:
   name: Home
+  latitude: 6.9271
+  longitude: 79.8612
+  elevation: 10
+  unit_system: metric
+  time_zone: Asia/Colombo
+
+logger:
+  default: info
 
 frontend:
 
-logger:
+config:
 
-# ඔයාට අනෙකුත් integration මෙහෙම add කරන්න පුළුවන්
-
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
