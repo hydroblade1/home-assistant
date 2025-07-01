@@ -1,9 +1,13 @@
-# Home Assistant official stable image එක use කරනවා
-FROM homeassistant/home-assistant:stable
+FROM ghcr.io/home-assistant/home-assistant:stable
 
-# ඔයාගේ config folder එක copy කරනවා container එකට
-COPY ./config /config
+# Working directory
+WORKDIR /config
 
-# Home Assistant run කරන command එක
-CMD [ "hass", "--config", "/config" ]
+# Copy configuration.yaml
+COPY configuration.yaml /config/
 
+# Expose port 8123
+EXPOSE 8123
+
+# Command to run Home Assistant
+CMD [ "python3", "-m", "homeassistant", "--config", "/config" ]
